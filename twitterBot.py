@@ -1,15 +1,12 @@
 import tweepy
-import time
-
-import tweepy
 
 
 def main():
     twitter_auth_keys = {
-        "consumer_key": "REPLACE_THIS_WITH_YOUR_CONSUMER_KEY",
-        "consumer_secret": "REPLACE_THIS_WITH_YOUR_CONSUMER_SECRET",
-        "access_token": "REPLACE_THIS_WITH_YOUR_ACCESS_TOKEN",
-        "access_token_secret": "REPLACE_THIS_WITH_YOUR_ACCESS_TOKEN_SECRET"
+        "consumer_key": "hL6RL0YB9XIC37khVLqw8E3kj",
+        "consumer_secret": "PuPJDr3kCfleaZ6IoeNyNru1GnF4HlC5CGJpU49d9yZBVb81zX",
+        "access_token": "1292255341913178113-m3nKjzcr2OwdrdXOfGiV71KzKtCwYr",
+        "access_token_secret": "BVyD2st2lkkp03dXyjkhgKgqvegAQqMhEx0b37ZwkbGoW"
     }
 
     auth = tweepy.OAuthHandler(
@@ -22,13 +19,10 @@ def main():
     )
     api = tweepy.API(auth)
 
-    tweet = "Another day, another #scifi #book and a cup of #coffee"
+    tweet = "Allekusu"
     status = api.update_status(status=tweet)
 
 
 if __name__ == "__main__":
     main()
 
-
-
-print('print')
