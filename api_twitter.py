@@ -1,7 +1,7 @@
 import tweepy
 
 
-def main():
+def main(title, user):
     twitter_auth_keys = {
         "consumer_key": "hL6RL0YB9XIC37khVLqw8E3kj",
         "consumer_secret": "PuPJDr3kCfleaZ6IoeNyNru1GnF4HlC5CGJpU49d9yZBVb81zX",
@@ -19,10 +19,10 @@ def main():
     )
     api = tweepy.API(auth)
 
-    tweet = "Allekusu"
-    status = api.update_status(status=tweet)
+    tweet = f'"{title}" by u/{user}'
+    media = api.media_upload("top.jpg")
+    post_result = api.update_status(status=tweet, media_ids=[media.media_id])
+    #status = api.update_status(status=tweet)
 
 
-if __name__ == "__main__":
-    main()
 
