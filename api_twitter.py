@@ -20,12 +20,11 @@ def main(title, user):
     )
     api = tweepy.API(auth)
 
-    tweet = f'"{title}" by u/{user}'
+    tweet = f'"{title}" by u/{user} #MechanicalKeyboards #Keyboard'
     image = Image.open('top.jpg')
     reduce_size(image)
     media = api.media_upload('top.jpg')
     post_result = api.update_status(status=tweet, media_ids=[media.media_id])
-    #status = api.update_status(status=tweet)
 
 
 def reduce_size(image):

@@ -28,7 +28,7 @@ def grab_a_pic():
 if __name__ == "__main__":
     grab_a_pic()
 
-schedule.every(1).hours.do(grab_a_pic)
+schedule.every(2).hours.do(grab_a_pic)
 while 1:
     schedule.run_pending()
     time.sleep(1)
