@@ -1,4 +1,5 @@
 import tweepy
+from PIL import Image
 
 
 def main(title, user):
@@ -20,9 +21,12 @@ def main(title, user):
     api = tweepy.API(auth)
 
     tweet = f'"{title}" by u/{user}'
-    media = api.media_upload("top.jpg")
+    image = Image.open('top.jpg')
+    reduce_size(image)
+    media = api.media_upload('top.jpg')
     post_result = api.update_status(status=tweet, media_ids=[media.media_id])
     #status = api.update_status(status=tweet)
 
 
-
+def reduce_size(image):
+    image.save('top.jpg', optimize=True, quality=65)
